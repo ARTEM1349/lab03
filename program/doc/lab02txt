@@ -1,1 +1,186 @@
+                                                               Лаба2
+                                      Тема: Основи debug процессу
+                                                                                       Виконав:
+                                                                        Стась Артем  КН-922Б
+
+
+	Зареєструватися (якщо треба) на однієї з загально-доступних систем (рекомендовано), таких як gitlab, github та створити там приватний репозиторій за допомогою веб інтерфейсу проекту. Репозиторій повинен мати наступну назву: programing-FNAME
+
+
+	Склонуватися з створеного репозиторія  
+	Відкривши термінал, потрібно ввести наступну команду:
+	git clone https://github.com/ARTEM1349/programing-artem.git
+	Створився репозиторій programing-artem
+
+	Створити наступні каталоги в своєму репозиторію: lab02, lab02/src. Скопіювати наступні елементи:
+	файл .clang-format з проекта sample_project до кореня вашого репозиторія
+	файл .clang-tidy з проекта sample_project до кореня вашого репозиторія
+	файл .gitlab-ci.yml з проекта sample_project до кореня вашого репозиторія
+	файл Doxyfile з каталогу lab00 проекта sample_project до каталогу lab02 вашого репозиторія
+	файл Makefile з каталогу lab00 проекта sample_project до каталогу lab02 вашого репозиторія
+	файл README.md з каталогу lab00 проекта sample_project до каталогу lab02 вашого репозиторія
+	каталог src з каталогу lab00 проекта sample_project до каталогу lab02 вашого репозиторія
+	
+	Перейти в скопійований репозиторій і правою кнопкою мишки створити каталог lab02, потім перейти до створеного каталогу і такими самими діями створити каталог src.
+	Для того щоб скопіювати файли: clang-format;clang-tidy;.gitlab-ci.yml. Потрібно перейти в каталог sample_project, включити пункт показувати приховані файли і за допомогою мишки виділити всі необхідні файли і cкопіювати до кореня репозиторія programing-artem.
+	Для того щоб скопіювати файли: Doxyfile;Makefile; README.md. Потрібно перейти в каталог sample_project/ lab00, і за допомогою мишки виділити всі необхідні файли і скопіювати їх в каталог programing-artem /lab02.
+	Для того щоб скопіювати каталог src. Потрібно перейти в каталог sample_project/lab00, і за допомогою мишки виділити необхідний каталог і скопіювати в каталог programing-artem/lab02.
+
+
+o	Що отримали в результаті?
+├── .clang-format
+├── .clang-tidy
+├── .gitlab-ci.yml
+└── lab02
+    ├── Doxyfile
+    ├── Makefile
+    ├── README.md
+    └── src
+        ├── lib.c
+        ├── lib.h
+        └── main.c
+
+	Зафіксувати зміни (за допомогою команди git commit) під назвою "Initial copy of sample_project"
+	Перейти до каталогу programing-artem та прописати наступні команди:
+	git add .clang-format
+	git add .clang-tidy
+	git add .gitlab-ci.yml
+	Після цього перейти до каталогу lab02 та прописати наступні команди:
+	git add Doxyfile
+	git add Makefile 
+	git add README.md
+	git add src/
+
+
+	Потім для збереження змін за допомогою команди 
+	git commit і додати назву "Initial copy of sample_project" потрібно прописати наступну команду:
+	git commit -m "Initial copy of sample_project"
+o	Що отримали в результаті?
+	 git commit -m "Initial copy of sample_project"
+	[main 7094e91] Initial copy of sample_project
+	9 files changed, 383 insertions(+)
+	create mode 100644 .clang-format
+	create mode 100644 .clang-tidy
+	create mode 100644 .gitlab-ci.yml
+	create mode 100644 lab02/Doxyfile
+	create mode 100644 lab02/Makefile
+	create mode 100644 lab02/README.md
+	create mode 100644 lab02/src/lib.c
+	create mode 100644 lab02/src/lib.h
+	create mode 100644 lab02/src/main.c
+
+	Виконати зміни, зібрати проект (зкомпілувати) та продемонструвати зміни. Додати новій тип Тварини "Людина", зробити так, щоб він був у списку елементів, що виводиться на екран. 
+	Перейти до каталогу src, відкрити файл lib.c і додати новий кейс: 
+	const char *get_animal_type_name(enum animal_type type)
+	{
+	const char *result;
+	switch (type) {
+	case CAT:
+	result = "Вівця";
+	break;
+	case DOG:
+	result = "Коза";
+	break;
+	case COW:
+	result = "Гусак";
+	break;
+	case PIG:
+	result = "Курка";
+	break;
+	case MEN:
+	result = "Людина";
+	break;	
+	default:
+	result = "N/A";
+	}
+	return result;
+	}
+	Після цього відкрити файл lib.h і додати до списку тварин команду:
+	enum animal_type {
+	PIG, /**< Свиня */
+	COW, /**< Корова */
+	DOG, /**< Собака */
+	CAT, /**< Кіт */
+	MEN, /**< Людина */
+	ANIMAL_TYPE_COUNT /**< Кількість тварин */
+	};
+	Зберегти зміни. Скомпілювати Makefail за допомогою команди make all. Після цього перейти до створеного каталогу dist і запустити на виконанні файл main.bin за допомогою команди ./main.bin
+o	Що отримали в результаті?
+	Інформація про тварину №01: Курка: зріст = 9 см, маса = 45 гр. 
+	Інформація про тварину №02: Вівця: зріст = 12 см, маса = 42 гр.
+	Інформація про тварину №03: Курка: зріст = 13 см, маса = 12 гр. 
+	Інформація про тварину №04: Людина: зріст = 101 см, маса = 57 гр. 
+	Інформація про тварину №05: Гусак: зріст = 10 см, маса = 14 гр. 
+	Інформація про тварину №06: Вівця: зріст = 79см, маса = 37 гр. 
+	Інформація про тварину №07: Гусак: зріст = 69 см, маса = 94 гр. 
+	Інформація про тварину №08: Вівця: зріст = 30 см, маса = 34 гр. 
+	Інформація про тварину №09: Вівця: зріст = 13 см, маса = 123 гр. 
+	Інформація про тварину №10: Гусак: зріст = 187 см, маса = 27 гр.
+
+	Відкрити в відлагоднику (debugger) lldb ваш виконуючий файл, 
+	Зупинитися на будь-якій строці та визначити значення змінних (variables). 
+	Слід поекспериментувати з можливостями відлагодника "Step in", "Step over", "Step out"
+	За допомогою команди sudo apt install lldb встановити (debugger) lldb
+	Щоб запустити lldb потрібно в терміналі ввести команду: lldb.
+	Потім потрібно завантажити виконуваний файл main.bin за допомогою команди: file dist/main.bin
+	Після завантаження файл потрібно встановити точку зупинки за допомогою команди: breakpoint set --name main
+	Тепер потрібно запустити програму за допомогою команди: run 
+	Process 3835 stopped
+	* thread #1, name = 'main.bin', stop reason = breakpoint 2.1
+	    frame #0: 0x0000555555555302 main.bin`main at main.c:40:22
+	   37    */
+	   38   int main()
+	   39   {
+	-> 40           srand((unsigned int)time(0));
+	   41           struct animal animals[ANIMAL_COUNT];
+	   42  
+	   43           for (unsigned int i = 0; i < ANIMAL_COUNT; i++) {
+	Для визначення зміних потрібно ввести команду: frame variable
+	(animal[10]) animals = {
+	  [0] = (type = 0x492f4f48, height = 775772500, weight = 7170402)
+	  [1] = (type = MEN | 0x54554128, height = 0, weight = 0)
+	  [2] = (type = 0xff000000, height = 0, weight = 0)
+	  [3] = (type = 0xff000000, height = 0, weight = 255)
+	  [4] = (type = PIG, height = 0, weight = 4278190080)
+	  [5] = (type = PIG, height = 1831826547, weight = 778987873)
+	  [6] = (type = DOG | 0x6e6960, height = 1414873432, weight = 0)
+	  [7] = (type = PIG, height = 0, weight = 0)
+	  [8] = (type = PIG, height = 0, weight = 0)
+	  [9] = (type = PIG, height = 0, weight = 0)
+	}
+	Для того щоб протестувати "Step in", "Step over", "Step out" потрібно ввести наступні команди: thread step-in; thread step-over; thread step-out
+	(lldb) thread step-in
+	Process 3835 stopped
+	* thread #1, name = 'main.bin', stop reason = step in
+	    frame #0: 0x00007ffff7c40a40 libc.so.6`__srandom(x=1664374994) at random.c:209:1
+	(lldb) thread step-over
+	Process 3835 stopped
+	* thread #1, name = 'main.bin', stop reason = step over
+	    frame #0: 0x00007ffff7c40a41 libc.so.6`__srandom(x=1664374994) at random.c:210:3
+	(lldb) thread step-out
+	Process 3835 stopped
+	* thread #1, name = 'main.bin', stop reason = step out
+	    frame #0: 0x0000555555555312 main.bin`main at main.c:43:20
+	   40           srand((unsigned int)time(0));
+	   41           struct animal animals[ANIMAL_COUNT];
+	   42  
+	-> 43           for (unsigned int i = 0; i < ANIMAL_COUNT; i++) {
+	   44                   generate_animal(&animals[i]);
+	   45           }
+	   46           show_animals(animals, ANIMAL_COUNT);
+
+o	Зафіксувати зміни за допомогою команди git commit.
+o	Перейти до каталогу programing-markov та прописати наступні команди: 
+o	git add .
+o	Потім для збереження змін за допомогою команди 
+o	git commit і додати назву "Initial copy of sample_project" потрібно прописати наступну команду:
+o	git commit -m "Initial copy of sample_project"
+o	Додали всі зміни до git commit та зберегли їх.
+	Дослідити режими компіляції з інформацією про відлагодження та без неї; описати різницю.
+	Для того щоб запустити простий процес компіляції потрібно ввести команду: make all
+	Для запуску компіляції з інформацією про налагодження необхідно ввести такі команди: make --debug all
+	При компіляції з інформацією відлагодження компілятор включає додаткову інформацію в об'єктні та файли, що виконуються. Завдяки цій інформації відладчик дізнається, які адреси відповідають тим чи іншим рядкам у тому чи іншому вихідному файлі, як відобразити значення локальної змінної тощо.
+	Завантажити зміни за допомогою команди git push 
+	Відкривши термінал, потрібно ввести наступні команду: git push. Після цього потрібно ввести своє ім'я на github та токен особистого доступу
+	Завантажили наш репозиторій на githab.
 
