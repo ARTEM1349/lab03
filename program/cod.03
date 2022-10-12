@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main() {
+    float USD = (40), EUR = (39), RUB =  (0.3f), UAH , x ,y,z ;
+    scanf("%f",&UAH);
+    x = UAH / USD;
+    y = UAH / EUR;
+    z = UAH / RUB;
+    printf("USD: %f/%f = %.4f\n",UAH,USD,x);
+    printf("EUR: %f/%f = %.4f\n",UAH,EUR,y);
+    printf("RUB: %f/%f = %.4f\n",UAH,RUB,z);
+    
+    return 0;
+}
