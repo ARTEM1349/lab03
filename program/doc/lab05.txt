@@ -24,7 +24,7 @@ int main(){
  4        float p,i,N,x;
    5        N=1;
    6        i =(200);
--> 7        p = (0.5f);
+-> 7        p = (1.5f);
    8        
    9        for (i = 200; N<10; N++)
    (lldb) p i = 400
