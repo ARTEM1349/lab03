@@ -1,0 +1,12 @@
+#include<stdio.h>
+int main(){
+    char a[]={'N','I','K','I','T','A'};
+    a[0] ='I'; 
+    a[1] = 'T';
+    a[2] = 'A';
+    a[3] = 'N';
+    a[4] = 'I';
+    a[5] = 'K';
+    printf("%s\n",a);
+   return 0;
+}
