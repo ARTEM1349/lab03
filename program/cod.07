@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+ 
+ int main(){
+     srand((unsigned int)time(NULL));
+     int b = 10;
+     int a = rand()%5;
+     int s;
+     double x;
+     
+     int arr[]={100,250,333,476,24,83};
+     
+       s = arr[a];
+       for (int i = 0;i<b;i++){
+          x= s*(1+0.5*i);
+      printf ("%.2f\n",x);
+      }
+     
+     return 0;
+     
+ }
