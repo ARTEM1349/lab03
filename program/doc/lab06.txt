@@ -12,10 +12,10 @@
 int main(){
     char a[]={'N','I','K','I','T','A'};
     int m = sizerof(a)-1;
-    for (int c = 0; c<m/2;c++){
-     char g = a[c];
-     a[c] = a[m/2+c];
-      a[m/2+c] =  g ;
+    for (int i = 0; i<m/2;i++){
+     char g = a[i];
+     a[i] = a[m/2+i];
+      a[m/2+i] =  g ;
      }
      printf("%i\n",m);
     printf("%s\n",g);
