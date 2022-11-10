@@ -8,17 +8,18 @@
 - опис роботи: зміна послідовності виводу букв за допомогою заміни цифри порядка букви.
 
 #include<stdio.h>
+
 int main(){
     char a[]={'N','I','K','I','T','A'};
-    int sizer = sizerof(a)-1;
-    printf("%i\n",sizer);
-    for (int c = 0; c<sizer/2;i++){
+    int m = sizerof(a)-1;
+    for (int c = 0; c<m/2;c++){
      char g = a[c];
-     a[c] = a[sizer/2+c];
-     a[sizer/2+c] = g;
+     a[c] = a[m/2+c];
+      a[m/2+c] =  g ;
      }
+     printf("%i\n",m);
     printf("%s\n",g);
-    
+  
    return 0;
 }
 
