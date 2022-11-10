@@ -10,13 +10,15 @@
 #include<stdio.h>
 int main(){
     char a[]={'N','I','K','I','T','A'};
-    a[0] ='I'; 
-    a[1] = 'T';
-    a[2] = 'A';
-    a[3] = 'N';
-    a[4] = 'I';
-    a[5] = 'K';
-    printf("%s\n",a);
+    int sizer = sizerof(a)-1;
+    printf("%i\n",sizer);
+    for (int c = 0; c<sizer/2;i++){
+     char g = a[c];
+     a[c] = a[sizer/2+c];
+     a[sizer/2+c] = g;
+     }
+    printf("%s\n",g);
+    
    return 0;
 }
 
