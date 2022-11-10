@@ -1,14 +1,51 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
-    float a = (0.5f),//процентна ставка
-          UAH =(200),//внесок
-          T = 1,//мінімальний час вкладення
-          x;
-    for (T=1; T<10; T++)
-    {
-         x=UAH*(1+0.5*T)+(x/UAH);
-        printf("%.2f\n",x);
-    }
-    return 0;
+int main()
+{ 
+   int a, b, i = 2, max = 2;
+   scanf("%f",&a);
+   scanf("%f",&b);
+   while(a > b)
+   {
+       b++;
+       i = 2;
+       while(b%i != 0) 
+       {
+           i++;
+       }
+       if(b == i && b > max)
+       {
+          max = b;      
+       }      
+   }
+      return 0;
+}
+
+
+
+#include <stdio.h>
+
+int main()
+{
+   
+   int a, b, i, max = 2;
+   scanf("%f",&a);
+   scanf("%f",&b);
+   
+   do
+   {
+       b++;
+       i = 2;
+       do
+       {
+          i++;
+          if(b == i && b > max)
+          {
+          max = b;      
+          }
+       }
+       while(b%i != 0);  
+   }
+   while(a >= b); 
+ return 0;
 }
