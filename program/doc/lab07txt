@@ -41,7 +41,7 @@ int lab06(long int b[], int s)
 
 int lab05(h)
 {
-     int i;
+     int i,h,a;
      
      for (a = h; a>0 ; a--) 
      {
